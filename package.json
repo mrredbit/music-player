@@ -18,7 +18,7 @@
     "start": "node server.js --env=dev",
     "test": "karma start",
     "test:watch": "karma start --autoWatch=true --singleRun=false",
-    "jsonserver": "json-server ./jsonserver/db.json --route ./jsonserver/routes.json"
+    "jsonserver": "json-server ./jsonserver/db.json --routes ./jsonserver/routes.json"
   },
   "repository": "",
   "keywords": [],
