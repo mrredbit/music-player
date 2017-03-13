@@ -13,6 +13,7 @@ const mockStore = configureMockStore(middlewares)
 /**
  * Test Async Action Creators
  */
+// @TODO Not yet finished, but all api test should be fairly similar
 describe('Action Creators', () => {
   describe('apiActions', () => {
     describe('getMusicLibTracks', () => {
@@ -93,7 +94,7 @@ describe('Action Creators', () => {
           isLoading: false,
           isError: false
         },
-        mode: constant.PLAYER_MODE.MUSIC_LIB
+        mode: constant.PLAYER_VIEW.MUSIC_LIB
       };
 
       afterEach(() => {
@@ -156,7 +157,6 @@ describe('Action Creators', () => {
 
         return store.dispatch(actions.getMusicLibTracks())
           .then(() => {
-            console.log(store.getActions());
             expect(store.getActions()).to.eql(expectedActions)
           })
       })
@@ -164,4 +164,3 @@ describe('Action Creators', () => {
   })
 })
 
-// @TODO Not yet finished, but all api test should be fairly similar

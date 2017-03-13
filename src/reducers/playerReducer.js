@@ -28,30 +28,26 @@ const initialPlayerState = {
 const playerReducer = function (playerState = initialPlayerState, action = {}) {
   let newPlayQueue, newMusicLib, newPlayerControl, newTracks, newMusicLibTracks, newHistoryItems, newItems;
   let data = action.data;
-
   switch (action.type) {
     /** Player Control Actions */
     case actionTypes.PLAYER_CONTROL.PAUSED:
       newPlayerControl = Object.assign({}, playerState.playerControl, {
         playingState: playingState.PAUSED
       });
-      playerState = Object.assign({}, playerState, {playerControl: newPlayerControl});
-      break;
+      return Object.assign({}, playerState, {playerControl: newPlayerControl});
 
     case actionTypes.PLAYER_CONTROL.PLAYED:
       newPlayerControl = Object.assign({}, playerState.playerControl, {
         playingState: playingState.PLAYING
       });
-      playerState = Object.assign({}, playerState, {playerControl: newPlayerControl});
-      break;
+      return Object.assign({}, playerState, {playerControl: newPlayerControl});
 
     case actionTypes.PLAYER_CONTROL.UPDATE_TIME_POS:
       newPlayerControl = Object.assign({}, playerState.playerControl, {
         playingTimePosition: data.playingTimePosition,
         trackDuration: data.trackDuration
       });
-      playerState = Object.assign({}, playerState, {playerControl: newPlayerControl});
-      break;
+      return Object.assign({}, playerState, {playerControl: newPlayerControl});
 
     case actionTypes.PLAYER_CONTROL.NEXT:
     case actionTypes.PLAYER_CONTROL.PREV:
@@ -59,42 +55,36 @@ const playerReducer = function (playerState = initialPlayerState, action = {}) {
         playingTimePosition: 0,
         trackDuration: 0
       });
-      playerState = Object.assign({}, playerState, {playerControl: newPlayerControl});
-      break;
+      return Object.assign({}, playerState, {playerControl: newPlayerControl});
 
     case actionTypes.PLAYER.SWITCH_VIEW:
-      playerState = Object.assign({}, playerState, {view: data.view})
-      break;
+      return Object.assign({}, playerState, {view: data.view})
 
     /** Api Actions */
     case actionTypes.API.GET_MUSIC_LIB_TRACKS_REQUEST:
       newMusicLib = Object.assign({}, playerState.musicLib, {
         isLoading: true
       });
-      playerState = Object.assign({}, playerState, {musicLib: newMusicLib});
-      break;
+      return Object.assign({}, playerState, {musicLib: newMusicLib});
     case actionTypes.API.GET_MUSIC_LIB_TRACKS_SUCCESS:
       newMusicLib = Object.assign({}, playerState.musicLib, {
         tracks: data.tracks,
         isLoading: false,
         isError: false
       });
-      playerState = Object.assign({}, playerState, {musicLib: newMusicLib});
-      break;
+      return Object.assign({}, playerState, {musicLib: newMusicLib});
     case actionTypes.API.GET_MUSIC_LIB_TRACKS_FAIL:
       newMusicLib = Object.assign({}, playerState.musicLib, {
         isLoading: false,
         isError: true
       });
-      playerState = Object.assign({}, playerState, {musicLib: newMusicLib});
-      break;
+      return Object.assign({}, playerState, {musicLib: newMusicLib});
 
     case actionTypes.API.UPDATE_MUSIC_LIB_TRACK_REQUEST:
       newMusicLib = Object.assign({}, playerState.musicLib, {
         isLoading: true
       });
-      playerState = Object.assign({}, playerState, {musicLib: newMusicLib});
-      break;
+      return Object.assign({}, playerState, {musicLib: newMusicLib});
     case actionTypes.API.UPDATE_MUSIC_LIB_TRACK_SUCCESS:
       newTracks = playerState.musicLib.tracks.map((track)=> {
         if (track.id === data.track.id) {
@@ -108,23 +98,19 @@ const playerReducer = function (playerState = initialPlayerState, action = {}) {
         isLoading: false,
         isError: false
       });
-      playerState = Object.assign({}, playerState, {musicLib: newMusicLib});
-      break;
+      return Object.assign({}, playerState, {musicLib: newMusicLib});
     case actionTypes.API.UPDATE_MUSIC_LIB_TRACK_FAIL:
       newMusicLib = Object.assign({}, playerState.musicLib, {
         isLoading: false,
         isError: true
       });
-      playerState = Object.assign({}, playerState, {musicLib: newMusicLib});
-      break;
-
+      return Object.assign({}, playerState, {musicLib: newMusicLib});
 
     case actionTypes.API.GET_MAIN_PLAYLIST_REQUEST:
       newPlayQueue = Object.assign({}, playerState.playQueue, {
         isLoading: true
       });
-      playerState = Object.assign({}, playerState, {playQueue: newPlayQueue});
-      break;
+      return Object.assign({}, playerState, {playQueue: newPlayQueue});
     case actionTypes.API.GET_MAIN_PLAYLIST_SUCCESS:
       newPlayQueue = Object.assign({}, playerState.playQueue, data, {
         isLoading: false,
@@ -135,25 +121,22 @@ const playerReducer = function (playerState = initialPlayerState, action = {}) {
         playingTimePosition: data.items.length ? playerState.playerControl.playingTimePosition : 0,
         trackDuration: data.items.length ? playerState.playerControl.trackDuration : 0
       });
-      playerState = Object.assign({}, playerState, {
+      return Object.assign({}, playerState, {
         playQueue: newPlayQueue,
         playerControl: newPlayerControl
       });
-      break;
     case actionTypes.API.GET_MAIN_PLAYLIST_FAIL:
       newPlayQueue = Object.assign({}, playerState.playQueue, {
         isLoading: false,
         isError: true
       });
-      playerState = Object.assign({}, playerState, {playQueue: newPlayQueue});
-      break;
+      return Object.assign({}, playerState, {playQueue: newPlayQueue});
 
-    case actionTypes.API.UPDATE_MAIN_PLAYLIST_TRACK:
+    case actionTypes.API.UPDATE_MAIN_PLAYLIST_REQUEST:
       newPlayQueue = Object.assign({}, playerState.playQueue, {
         isLoading: true
       });
-      playerState = Object.assign({}, playerState, {playQueue: newPlayQueue});
-      break;
+      return Object.assign({}, playerState, {playQueue: newPlayQueue});
     case actionTypes.API.UPDATE_MAIN_PLAYLIST_SUCCESS:
       newPlayQueue = Object.assign({}, data, {
         isLoading: false,
@@ -166,19 +149,16 @@ const playerReducer = function (playerState = initialPlayerState, action = {}) {
         trackDuration: data.items.length ? playerState.playerControl.trackDuration : 0
       });
 
-      playerState = Object.assign({}, playerState, {
+      return Object.assign({}, playerState, {
         playQueue: newPlayQueue,
         playerControl: newPlayerControl
       });
-      break;
-    case actionTypes.API.UPDATE_MAIN_PLAYLIST_TRACK_FAIL:
+    case actionTypes.API.UPDATE_MAIN_PLAYLIST_FAIL:
       newPlayQueue = Object.assign({}, playerState.playQueue, {
         isLoading: false,
         isError: true
       });
-      playerState = Object.assign({}, playerState, {playQueue: newPlayQueue});
-      break;
-
+      return Object.assign({}, playerState, {playQueue: newPlayQueue});
 
     // Below are optimistic updates
     // (Assume the update request will success, update client side UI before the round trip to gain better performance)

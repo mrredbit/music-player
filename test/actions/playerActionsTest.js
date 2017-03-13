@@ -10,14 +10,13 @@ describe('Action Creators', ()=> {
   describe('playerActions', ()=> {
     describe('switchMode', () => {
       it('should create an action', () => {
-        var data = {mode: constant.PLAYER_MODE.PLAY_QUEUE};
+        var data = {mode: constant.PLAYER_VIEW.PLAY_QUEUE};
         var expectedAction = {
-          type: actionTypes.PLAYER.SWITCH_MODE,
+          type: actionTypes.PLAYER.SWITCH_VIEW,
           source: actionSources.BY_USER,
           data: data
         }
-
-        expect(actions.switchMode(data)).to.eql(expectedAction);
+        expect(actions.switchView(data)).to.eql(expectedAction);
       })
     })
   })
