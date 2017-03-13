@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>42CE528A-40F0-4D62-8AB8-675BD76E27CC</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M40,80 C17.90861,80 0,62.09139 0,40 C0,17.90861 17.90861,0 40,0 C62.09139,0 80,17.90861 80,40 C80,62.09139 62.09139,80 40,80 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="80" height="80" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="control-panel" transform="translate(-600.000000, -25.000000)">
+            <g id="Control-Panel">
+                <g id="Control" transform="translate(559.000000, 25.000000)">
+                    <g id="play" transform="translate(41.000000, 0.000000)">
+                        <use stroke="#D6D6D7" mask="url(#mask-2)" stroke-width="6" fill-rule="nonzero" xlink:href="#path-1"></use>
+                        <path d="M53.5006994,37.3610594 C56.3041049,38.81788 56.286468,41.189018 53.5006994,42.6366734 L35.0760149,52.2112629 C32.2726094,53.6680834 30,52.31683 30,49.1225326 L30,30.8752 C30,27.712521 32.2902463,26.3388146 35.0760149,27.7864699 L53.5006994,37.3610594 Z" id="Path" fill="#D8D8D8" fill-rule="evenodd"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

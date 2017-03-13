@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>6DB44780-1593-49E3-BAC1-BA8043565CBA</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="control-panel" transform="translate(-559.000000, -59.000000)" fill="#D8D8D8">
+            <g id="Control-Panel">
+                <g id="Control" transform="translate(559.000000, 25.000000)">
+                    <g id="Rewind" transform="translate(0.000000, 34.000000)">
+                        <path d="M14.9355132,5.15743913 C16.3593041,5.89764689 16.3503467,7.10241759 14.9355132,7.83796855 L5.57800166,12.7027992 C4.15421074,13.443007 3,12.7564377 3,11.1334212 L3,1.86198631 C3,0.255035118 4.16316814,-0.442942472 5.57800166,0.292608406 L14.9355132,5.15743913 Z" id="Path" transform="translate(9.500000, 6.500000) rotate(180.000000) translate(-9.500000, -6.500000) "></path>
+                        <rect id="Rectangle-6" x="0" y="0" width="3" height="13" rx="1.5"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
