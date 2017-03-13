@@ -76,7 +76,7 @@ npm run dist
 - **Container + Component approach** - React components are only served as presentation layers for user interactions. I seperate the UI components into two types, `Container` and `Component`. `Container` is acted as a smart component, where interaction logics, life cycle event handling... etc are all written in this layer. `Component` on the other hand is acted as a dump component, which it will just render the DOM element based on whatever passed to its `props`, it don't care much about what logic behind.
 - **CSS Module** - I used CSS Module to try to avoid global styles(which always cause chaos with naming collisions) as much as possible. Every components will have their own CSS module, the class name is be hashed so it won't collide with other component.
 
-### Library Used
+### Other libraries Used
 - **Momentjs** - Time formatting
 - **Howlerjs** - Handy lib for playing music
 
