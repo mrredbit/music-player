@@ -45,7 +45,7 @@ User can click on the + button to add track to play queue
 <img src="https://cloud.githubusercontent.com/assets/963966/23863222/11f4c38e-0807-11e7-99f4-d6fe5f347cb4.png" width="400px">  
 - User can click on the - button to remove track from play queue  
 - User can interact with the player control (play, pause, previous, next)
-- User can rate the current playing track
+- User can rate the current playing track by clicking on the stars
 
 #### Error State
 <img src="https://cloud.githubusercontent.com/assets/963966/23863246/27b58f78-0807-11e7-957e-caf41e94a636.png" width="400px">  
@@ -81,6 +81,11 @@ When any error occurred during operation
 - Optimistic update
 
 ### TODO
-- Mobile Layout
+- Mobile Layout  
+<img src="https://cloud.githubusercontent.com/assets/963966/23865108/79c10a86-080c-11e7-8729-63a7cafec744.png" height="300px">
+<img src="https://cloud.githubusercontent.com/assets/963966/23865109/79c16382-080c-11e7-8e0f-c3259567d7c8.png" height="300px">
+<img src="https://cloud.githubusercontent.com/assets/963966/23865106/79bfa66e-080c-11e7-8b8b-e3f2a403bd9e.png" height="300px">
+<img src="https://cloud.githubusercontent.com/assets/963966/23865110/79e19fa8-080c-11e7-842d-c2c3b01c8e98.png" height="300px">
+<img src="https://cloud.githubusercontent.com/assets/963966/23865107/79c0d304-080c-11e7-8f88-d0d6b0851a95.png" height="300px">
 - Loading State
 - Cover more unit tests
