@@ -55,33 +55,33 @@ npm run dist
 ```
 
 ### Technology Used
-- ES6 + HTML5 + CSS3
-- React - Used as componented based rendering engine for presentation layer.
-- Redux - As the main framework of the website, Redux enforce one way data flow to achieve having one single source of truth, making state container always predictable, testable, maintainable, and even undoable.
-- Webpack - Transforming, bundling, packing modules.
-- Babel - Transpiling ES6 to browser supported javascript.
-- Karma - Test runner.
-- Mocha - Testing framework.
-- Chai - Assertion library.
-- EsLint - Highlighting and reporting improvement of code.
-- PostCSS - Transforming CSS files, used autoprefixer in this project to add different browser vendor prefixes.
-- Json Server - For quickly mocking a backend for POC
-- Npm - For managing node modules
+- **ES6 + HTML5 + CSS3**
+- **React** - Used as componented based rendering engine for presentation layer.
+- **Redux** - As the main framework of the website, Redux enforce one way data flow to achieve having one single source of truth, making state container always predictable, testable, maintainable, and even undoable.
+- **Webpack** - Transforming, bundling, packing modules.
+- **Babel** - Transpiling ES6 to browser supported javascript.
+- **Karma** - Test runner.
+- **Mocha** - Testing framework.
+- **Chai** - Assertion library.
+- **EsLint** - Highlighting and reporting improvement of code.
+- **PostCSS** - Transforming CSS files, used autoprefixer in this project to add different browser vendor prefixes.
+- **Json Server** - For quickly mocking a backend for POC
+- **Npm** - Managing node modules and running tasks
 
 ### Architecture
-- Redux
-- One way data flow
-- Single source of truth
-- Immutable store
-- Container + Component approach
-- CSS Module
+- **Redux** - Inspired by Facebook's FLUX architecture 
+- **One way data flow**
+- **Single source of truth**
+- **Immutable store**
+- **Container + Component approach**
+- **CSS Module**
 
 ### Library Used
-- Momentjs
-- Howlerjs
+- **Momentjs**
+- **Howlerjs**
 
 ### Performance Enhancement
-- Optimistic update
+- **Optimistic update**
 
 ### TODO
 - Mobile Layout  
