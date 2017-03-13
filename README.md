@@ -1,5 +1,8 @@
 #  Music Player
-Music Player is a simple project to illustrate my technical skills. It is a basic player with CRUD operations, user can fill up the play queue from music library and listen tracks from it.
+Music Player is a simple project to illustrate my technical skills. It is a basic player with CRUD operations of Tracks and Playlists entity, user can fill up the play queue from music library and play tracks from it.
+
+### DEMO
+http://musicplayer.davidchiu.io
 
 ### Installation
 Run below command on the root folder  
@@ -50,3 +53,34 @@ When any error occurred during operation
 
 #### Loading State
 ##### TBD
+
+### Technology Used
+- ES6 + HTML5 + CSS3
+- React + Redux
+- Webpack
+- Babel
+- Karma
+- Mocha
+- Chai
+- EsLint
+- PostCSS
+
+### Architecture
+- Redux
+- One way data flow
+- Single source of truth
+- Immutable store
+- Container + Component approach
+- CSS Module
+
+### Library Used
+- Momentjs
+- Howlerjs
+
+### Performance Enhancement
+- Optimistic update
+
+### TODO
+- Mobile Layout
+- Loading State
+- Cover more unit tests
