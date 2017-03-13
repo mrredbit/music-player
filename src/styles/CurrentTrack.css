@@ -1,0 +1,53 @@
+.index {
+  display: block;
+  padding-top: 30px;
+  height: 200px;
+}
+
+.artwork {
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+
+.mainContainer {
+  float: left;
+  margin-left: 30px;
+}
+
+.nowPlaying {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-top: 15px;
+}
+
+.artist {
+  font-size: 16px;
+  line-height: 1.2;
+  margin-top: 5px;
+}
+
+.infoContainer {
+  display: flex;
+  margin-top: 20px;
+}
+
+.genre,
+.duration {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #8b8d92;
+  margin-right: 20px;
+}
+
+.rating {
+  display: inline-block;
+}

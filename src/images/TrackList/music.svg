@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="63px" viewBox="0 0 66 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>148440E6-A895-4BB6-8EEC-FEDCA4EF399F</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Player" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="D-Queue-(Empty-State)" transform="translate(-607.000000, -226.000000)" stroke="#8B8D92">
+            <g id="music-icon" transform="translate(609.000000, 228.000000)">
+                <g id="Shape">
+                    <path d="M13.6019559,39.8211698 C14.883848,42.6315832 12.9673556,46.3309807 9.3205207,48.0872141 C5.6736858,49.8434506 1.67993628,48.9892404 0.398044178,46.1788302 C-0.883847927,43.3684199 1.03264413,39.6690224 4.67947903,37.9127859 C8.32631393,36.1565494 12.3200638,37.0107596 13.6019559,39.8211698 Z" stroke-width="4" stroke-linejoin="round"></path>
+                    <polyline stroke-width="4" stroke-linejoin="round" points="14 41 14 8.58710669 39 0 39 33.2724361"></polyline>
+                    <path d="M14,18 L38.5696379,9.49512534" stroke-width="3"></path>
+                    <path d="M61.9680134,35.8128706 C61.9680134,35.8128706 62.6171415,29.4690962 58.0669393,25.3120222 C53.5167341,21.154951 52,17 52,17 L52,52" stroke-width="4" stroke-linejoin="round"></path>
+                    <path d="M38.6019559,31.8211698 C39.8838481,34.6315801 37.9673548,38.3309776 34.3205213,40.0872141 C30.6736849,41.8434506 26.6799369,40.9892404 25.3980447,38.1788302 C24.1161517,35.3684168 26.0326429,31.6690224 29.6794793,29.9127859 C33.3263128,28.1565494 37.3200638,29.0107596 38.6019559,31.8211698 L38.6019559,31.8211698 Z" stroke-width="4" stroke-linejoin="round"></path>
+                    <path d="M51.6019559,49.8211698 C52.8838481,52.6315832 50.9673547,56.3309776 47.3205212,58.0872141 C43.6736847,59.8434506 39.6799365,58.9892404 38.3980444,56.1788302 C37.1161522,53.3684168 39.0326425,49.6690224 42.6794791,47.9127859 C46.3263126,46.1565494 50.3200638,47.0107596 51.6019559,49.8211698 Z" stroke-width="4" stroke-linejoin="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

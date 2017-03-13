@@ -1,0 +1,63 @@
+.index {
+  display: flex;
+  justify-content: center;
+  background-color: #27292f;
+  width: 100%;
+  height: 200px;
+}
+
+.disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.mainContainer {
+  padding-top: 25px;
+  width: 100%;
+  max-width: 620px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playerControlButton:not(:disabled) {
+  cursor: pointer;
+}
+
+.playerControlButton:hover {
+  opacity: 0.8;
+}
+
+.btnPlayPause {
+  composes: playerControlButton;
+}
+
+.btnPrev {
+  composes: playerControlButton;
+  padding: 10px;
+  margin-right: 15px;
+}
+
+.btnNext {
+  composes: playerControlButton;
+  padding: 10px;
+  margin-left: 15px;
+}
+
+.title,
+.artist {
+  font-size: 12px;
+  font-weight: 500;
+  flex: 1 1 0;
+}
+
+.artist {
+  text-align: right;
+  color: #8b8d92;
+}
+

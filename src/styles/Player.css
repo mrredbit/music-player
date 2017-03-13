@@ -1,0 +1,52 @@
+.index {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  height: 100%;
+  overflow-x: auto;
+  min-width: 780px;
+}
+
+.mainContainer {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  width: 100%;
+  max-width: 940px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+
+.playerTabContainer {
+  display: flex;
+}
+
+.playerTab {
+  display: flex;
+  justify-content: center;
+  height: 85px;
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  border-bottom: 5px solid #5f6062;
+  cursor: pointer;
+  color: #8b8d92;
+}
+
+.playerTab.active {
+  border-color: #f8bd8a;
+  color: #ffffff;
+}
+
+.tabName {
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.trackListContainer {
+  height: 100%;
+  overflow-y: auto;
+}
