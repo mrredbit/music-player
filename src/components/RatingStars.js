@@ -15,7 +15,8 @@ class RatingStars extends React.Component {
         className = styles({
           readonlyStar: true,
           odd: i % 2 !== 0,
-          ratedAt: i === (rating * 2) - 1
+          ratedAt: i === (rating * 2) - 1,
+          full: i <= (rating * 2) - 1
         });
         stars.push(<div key={i} className={className}/>);
       }
