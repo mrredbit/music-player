@@ -6,7 +6,7 @@ import actionSources from '../const/actionSources';
 
 const apiAction = {
   getMusicLibTracks: function () {
-    return dispatch => {
+    return function (dispatch) {
       dispatch(apiAction.getMusicLibTracksRequest());
       return dsTracks.getTracks()
         .then(function (response) {
@@ -46,7 +46,7 @@ const apiAction = {
   },
 
   updateMusicLibTrack: function (track) {
-    return dispatch => {
+    return function (dispatch) {
       dispatch(apiAction.updateMusicLibTracksRequest(track));
       return dsTracks.updateTrack(track)
         .then(function (response) {
@@ -86,7 +86,7 @@ const apiAction = {
   },
 
   getMainPlaylistTracks: function () {
-    return dispatch => {
+    return function (dispatch) {
       dispatch(apiAction.getMainPlaylistTracksRequest());
       dsPlaylists.getMainPlaylistTracks()
         .then(function (response) {
@@ -125,7 +125,7 @@ const apiAction = {
     };
   },
   updateMainPlaylist: function (data) {
-    return dispatch => {
+    return function (dispatch) {
       if (data.playQueue) {
         dispatch(apiAction.updateMainPlaylistRequest());
         dsPlaylists.updateMainPlaylist(data.playQueue)
