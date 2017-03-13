@@ -24,6 +24,7 @@ class TrackList extends React.Component {
     const currentTrack = tracks.length && tracks[0];
 
     let currentTrackContainer;
+
     if (isPlayQueue) {
       if (currentTrack) {
         currentTrackContainer = <CurrentTrack track={currentTrack}/>;
@@ -31,15 +32,56 @@ class TrackList extends React.Component {
       }
     }
 
-    let emptyState, errorState, list;
+
+    let header, list;
+    header = <div className={styles.headerContainer}>
+      <div className={styles.colNumber}>#</div>
+      <div className={styles.colActionButton}></div>
+      <div className={styles.colTitle}>Song</div>
+      <div className={styles.colArtist}>Artist</div>
+      <div className={styles.colDuration}>Duration</div>
+      <div className={styles.colGenre}>Genre</div>
+      <div className={styles.colRating}>Rating</div>
+    </div>
+
+    list = <div className={styles.trackListContainer}>
+      {tracks.map((track, index)=> {
+        return <div key={track.id} className={styles.trackContainer}>
+          <div className={styles.colNumber}>{index + 1}</div>
+          <div className={styles.colActionButton}>
+            {isMusicLib && <img className={styles.trackListItemAction}
+                                onClick={props.onAddTrackClick.bind(null, track, props.playQueue)}
+                                src={imgAddButton}/>
+            }
+
+            {isPlayQueue && <img className={styles.trackListItemAction}
+                                 onClick={props.onRemoveTrackClick.bind(null, track.id, props.playQueue)}
+                                 src={imgRemoveButton}/>
+            }
+          </div>
+          <div className={styles.colTitle}>{track.title}</div>
+          <div className={styles.colArtist}>{track.artist}</div>
+          <div
+            className={styles.colDuration}>{moment.duration(track.duration, 'seconds').format('m:ss', {trim: false})}</div>
+          <div className={styles.colGenre}>{track.genre}</div>
+          <div className={styles.colRating}><RatingStar track={track} readonly/></div>
+        </div>
+      })}
+    </div>
+
+    let emptyState, errorState, loadedState;
     if (props.isError) {
+      // Error State
       errorState = (<div className={styles.messageContainer}>
         <img src={imgMusic} className={styles.musicIcon}/>
         <div className={styles.messageHeading}>Oops...Something happened</div>
-        <div className={styles.messageSubHeading}>There are some issues when loading playlist, please refresh and try again.</div>
+        <div className={styles.messageSubHeading}>There are some issues when loading playlist, please refresh and try
+          again.
+        </div>
       </div>);
     }
     else if (props.playerView === constant.PLAYER_VIEW.PLAY_QUEUE && !hasTrack) {
+      // Empty State
       emptyState = (<div className={styles.messageContainer}>
         <img src={imgMusic} className={styles.musicIcon}/>
         <div className={styles.messageHeading}>No songs in the queue yet</div>
@@ -50,44 +92,12 @@ class TrackList extends React.Component {
         </button>
       </div>);
     } else {
-      list = <div>
+      // Loaded State
+      loadedState = <div>
         {currentTrackContainer}
         <div className={styles.title}>{props.title}</div>
-        <div className={styles.headerContainer}>
-          <div className={styles.colNumber}>#</div>
-          <div className={styles.colActionButton}></div>
-          <div className={styles.colTitle}>Song</div>
-          <div className={styles.colArtist}>Artist</div>
-          <div className={styles.colDuration}>Duration</div>
-          <div className={styles.colGenre}>Genre</div>
-          <div className={styles.colRating}>Rating</div>
-        </div>
-
-        <div className={styles.trackListContainer}>
-          {tracks.map((track, index)=> {
-            return <div key={track.id} className={styles.trackContainer}>
-              <div className={styles.colNumber}>{index + 1}</div>
-              <div className={styles.colActionButton}>
-                {
-                  isMusicLib && <img className={styles.trackListItemAction}
-                                     onClick={props.onAddTrackClick.bind(null, track, props.playQueue)}
-                                     src={imgAddButton}/>
-                }
-                {
-                  isPlayQueue && <img className={styles.trackListItemAction}
-                                      onClick={props.onRemoveTrackClick.bind(null, track.id, props.playQueue)}
-                                      src={imgRemoveButton}/>
-                }
-              </div>
-              <div className={styles.colTitle}>{track.title}</div>
-              <div className={styles.colArtist}>{track.artist}</div>
-              <div
-                className={styles.colDuration}>{moment.duration(track.duration, 'seconds').format('m:ss', {trim: false})}</div>
-              <div className={styles.colGenre}>{track.genre}</div>
-              <div className={styles.colRating}><RatingStar track={track} readonly/></div>
-            </div>
-          })}
-        </div>
+        {header}
+        {list}
       </div>
     }
 
@@ -95,7 +105,7 @@ class TrackList extends React.Component {
     return <div className={styles.index}>
       {emptyState}
       {errorState}
-      {list}
+      {loadedState}
     </div>
   }
 }
