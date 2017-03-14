@@ -22,8 +22,16 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.(png|jpg|gif|woff|woff2|css|sass|scss|less|styl)$/,
+        test: /\.(png|jpg|gif|woff|woff2|sass|scss|less|styl)$/,
         loader: 'null-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: 'classnames!style-loader!css-loader?modules!postcss-loader'
+      },
+      {
+        test: /\.(svg)$/,
+        loader: 'file-loader'
       },
       {
         test: /\.(js|jsx)$/,
@@ -35,11 +43,15 @@ module.exports = {
             path.join(__dirname, '/../test')
           ]
         )
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   },
   resolve: {
-    extensions: [ '', '.js', '.jsx' ],
+    extensions: ['', '.js', '.jsx'],
     alias: {
       actions: srcPath + 'actions/',
       helpers: path.join(__dirname, '/../test/helpers'),
@@ -54,5 +66,10 @@ module.exports = {
     new BowerWebpackPlugin({
       searchResolveModulesDirectories: false
     })
-  ]
+  ],
+  externals: {
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true
+  }
 };
