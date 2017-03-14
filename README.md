@@ -49,6 +49,11 @@ Run json-server for Backend (listen on port 3000)
 npm run jsonserver
 ```
 
+Run Tests
+```
+npm run test
+```
+
 Build Production Website (api will point to production backend on Google Cloud)
 ```
 npm run dist
