@@ -57,12 +57,14 @@ npm run dist
 ### Technology Used
 - **ES6 + HTML5 + CSS3**
 - **React** - Used as componented based rendering engine for presentation layer.
-- **Redux** - As the main framework of the website.
+- **Redux** - Used as the main framework of the website.
 - **Webpack** - Transforming, bundling, packing modules.
 - **Babel** - Transpiling ES6 to browser supported javascript.
 - **Karma** - Test runner.
 - **Mocha** - Testing framework.
 - **Chai** - Assertion library.
+- **Enzyme** - Shallow rendering components in unit test.
+- **Sinon** - Spy on functions to check if it is called.
 - **EsLint** - Highlighting and reporting improvement of code.
 - **PostCSS** - Transforming CSS files, used autoprefixer in this project to add different browser vendor prefixes.
 - **Json Server** - For quickly mocking a backend for POC
@@ -84,6 +86,12 @@ npm run dist
 - **Optimistic update** 
   - Problem - When building the music player, because all the data, including the track rating, were store in the backend. Whenever we are updating the Tracks and Playlist entity, the UI re-rendering is happen after the round trip of server communication. Sometimes in the edge case it can be very slow and make the user feel laggy(e.g. the rating action). I 
   - Enhancement - In the real situtation, we are quite confident that 99% of the requests will return a successful 200 response. So I assume that rating request will very probably be success too. Therefore I enhanced the UX by updating the client UI before getting the api response, so user can see an instant update. The worst case is when the server return a different data(for the case other people is changing the same place at the same time) or a failed response. But when the response came back, it will actually cause a second data change, so it will correct the data on screen or show an error message by that time, no big deal.
+
+### Unit Tests
+Did not covered every test case, but should be enough to demonstrate how to implement unit tests.
+- **actions** - Making sure correct actions is created, including async actions.
+- **components** - Making sure DOM element are rendered correctly. Check if actions called correct when interacting with UI.
+- **reducer** - Check if correct new state is returned.
 
 ### TODO
 - Mobile Layout  
