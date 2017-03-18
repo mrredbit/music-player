@@ -81,10 +81,8 @@ describe('Components', () => {
     const enzymeWrapper = shallow(<RatingStars {...props} />)
 
     it('should render correctly', () => {
-      expect(enzymeWrapper.find({className: styles.index}).length).to.eql(1);
-      for (var i = 0; i < 10; i++) {
-        expect(enzymeWrapper.find({title: (i + 1) / 2 + ' Star'}).length).to.eql(1); // should found 10 half stars
-      }
+      expect(enzymeWrapper.find(`.${styles.index}`).length).to.eql(1);
+        expect(enzymeWrapper.find(`.${styles.star}`).length).to.eql(10); // should found 10 half stars
     })
 
     it('should handle click correctly', () => {
