@@ -5,6 +5,7 @@ import CurrentTrack from '../CurrentTrack';
 import RatingStar from '../RatingStars';
 
 import styles from './TrackList.css';
+
 import imgAddButton from './images/add.svg';
 import imgRemoveButton from './images/remove.svg';
 import imgMusic from './images/music.svg';
@@ -14,11 +15,36 @@ import 'moment-duration-format';
 
 
 class TrackList extends React.Component {
+  renderEmptyState() {
+    const props = this.props;
+    return (<div className={styles.index}>
+      <div className={styles.messageContainer}>
+        <img src={imgMusic} className={styles.musicIcon}/>
+        <div className={styles.messageHeading}>No songs in the queue yet</div>
+        <div className={styles.messageSubHeading}>Click + in the music library to add songs from the library.</div>
+        <button className={styles.messageActionBtn}
+                onClick={props.onViewSwitchClick.bind(null, {view: constant.PLAYER_VIEW.MUSIC_LIB})}>Add song from
+          library
+        </button>
+      </div>
+    </div>);
+  }
 
-  render() {
+  renderErrorState() {
+    return (<div className={styles.index}>
+      <div className={styles.messageContainer}>
+        <img src={imgMusic} className={styles.musicIcon}/>
+        <div className={styles.messageHeading}>Oops...Something happened</div>
+        <div className={styles.messageSubHeading}>There are some issues when loading playlist, please refresh and try
+          again.
+        </div>
+      </div>
+    </div>);
+  }
+
+  renderLoadedState() {
     const props = this.props;
     let tracks = props.tracks;
-    const hasTrack = tracks.length;
     const isMusicLib = props.playerView === constant.PLAYER_VIEW.MUSIC_LIB;
     const isPlayQueue = props.playerView === constant.PLAYER_VIEW.PLAY_QUEUE;
     const currentTrack = tracks.length && tracks[0];
@@ -31,7 +57,6 @@ class TrackList extends React.Component {
         tracks = props.playQueue.items.slice(1);// Remove first track in the queue as it shown in another component
       }
     }
-
 
     let header, list;
     header = <div className={styles.headerContainer}>
@@ -68,45 +93,25 @@ class TrackList extends React.Component {
         </div>
       })}
     </div>
-
-    let emptyState, errorState, loadedState;
-    if (props.isError) {
-      // Error State
-      errorState = (<div className={styles.messageContainer}>
-        <img src={imgMusic} className={styles.musicIcon}/>
-        <div className={styles.messageHeading}>Oops...Something happened</div>
-        <div className={styles.messageSubHeading}>There are some issues when loading playlist, please refresh and try
-          again.
-        </div>
-      </div>);
-    }
-    else if (props.playerView === constant.PLAYER_VIEW.PLAY_QUEUE && !hasTrack) {
-      // Empty State
-      emptyState = (<div className={styles.messageContainer}>
-        <img src={imgMusic} className={styles.musicIcon}/>
-        <div className={styles.messageHeading}>No songs in the queue yet</div>
-        <div className={styles.messageSubHeading}>Click + in the music library to add songs from the library.</div>
-        <button className={styles.messageActionBtn}
-                onClick={props.onViewSwitchClick.bind(null, {view: constant.PLAYER_VIEW.MUSIC_LIB})}>Add song from
-          library
-        </button>
-      </div>);
-    } else {
-      // Loaded State
-      loadedState = <div>
-        {currentTrackContainer}
-        <div className={styles.title}>{props.title}</div>
-        {header}
-        {list}
-      </div>
-    }
-
-
-    return <div className={styles.index}>
-      {emptyState}
-      {errorState}
-      {loadedState}
+    return <div>
+      {currentTrackContainer}
+      <div className={styles.title}>{props.title}</div>
+      {header}
+      {list}
     </div>
+  }
+
+  render() {
+    const props = this.props;
+    const hasTrack = props.tracks.length;
+
+    if (props.isError) {
+      return this.renderErrorState();
+    } else if (props.playerView === constant.PLAYER_VIEW.PLAY_QUEUE && !hasTrack) {
+      return this.renderEmptyState();
+    } else {
+      return this.renderLoadedState();
+    }
   }
 }
 

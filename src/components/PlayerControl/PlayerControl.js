@@ -16,7 +16,7 @@ class PlayerControl extends React.Component {
   render() {
     const props = this.props;
     let title, artist;
-    debugger;
+
     const isPlaying = props.playerControl.playingState === playingState.PLAYING;
 
     const currentTrack = props.playQueue.items.length && props.playQueue.items[0];
