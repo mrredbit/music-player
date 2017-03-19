@@ -1,7 +1,9 @@
+/*global expect*/
+
 import React from 'react';
 import {shallow} from 'enzyme';
-import ProgressBar from '../../src/components/ProgressBar';
-import styles from '../../src/styles/ProgressBar.css';
+import ProgressBar from './ProgressBar';
+import styles from './ProgressBar.css';
 
 
 describe('Components', () => {

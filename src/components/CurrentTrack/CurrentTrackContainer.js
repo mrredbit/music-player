@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import CurrentTrack from '../components/CurrentTrack';
+import CurrentTrack from './CurrentTrack';
 
 class CurrentTrackContainer extends Component {
   render() {

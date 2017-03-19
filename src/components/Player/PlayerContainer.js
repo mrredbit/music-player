@@ -4,10 +4,10 @@ import React, {
 } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import Player from '../components/Player';
+import Player from './Player';
 
-import playerActions from '../actions/playerActions';
-import apiActions from '../actions/apiActions';
+import playerActions from '../../actions/playerActions';
+import apiActions from '../../actions/apiActions';
 
 class PlayerContainer extends Component {
   componentDidMount() {

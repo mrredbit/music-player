@@ -4,11 +4,11 @@ import React, {
 } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import PlayerControl from '../components/PlayerControl';
-import playControlActions from '../actions/playerControlActions';
+import PlayerControl from './PlayerControl';
+import playControlActions from '../../actions/playerControlActions';
 
-import audioPlayer from '../helper/audioPlayer';
-import constant from '../const/general';
+import audioPlayer from '../../helper/audioPlayer';
+import constant from '../../const/general';
 
 class PlayerControlContainer extends Component {
   loadTrack() {

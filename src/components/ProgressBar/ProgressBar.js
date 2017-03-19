@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/ProgressBar.css';
+import styles from './ProgressBar.css';
 
 import moment from 'moment';
 import 'moment-duration-format';

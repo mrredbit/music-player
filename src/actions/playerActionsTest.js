@@ -1,3 +1,5 @@
+/*global expect*/
+
 import actions from '../../src/actions/playerActions';
 import actionTypes from '../../src/const/actionTypes';
 import actionSources from '../../src/const/actionSources';

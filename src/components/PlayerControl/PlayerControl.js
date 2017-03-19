@@ -1,14 +1,14 @@
 import React from 'react';
 
-import constant from '../const/general';
+import constant from '../../const/general';
 
-import styles from '../styles/PlayerControl.css';
-import ProgressBar from '../containers/ProgressBar';
+import styles from './PlayerControl.css';
+import ProgressBar from '../ProgressBar';
 
-import imgPlay from '../images/PlayerControl/play.svg';
-import imgPause from '../images/PlayerControl/pause.svg';
-import imgPrev from '../images/PlayerControl/prev.svg';
-import imgNext from '../images/PlayerControl/next.svg';
+import imgPlay from './images/play.svg';
+import imgPause from './images/pause.svg';
+import imgPrev from './images/prev.svg';
+import imgNext from './images/next.svg';
 
 const playingState = constant.PLAYING_STATE;
 
@@ -16,6 +16,7 @@ class PlayerControl extends React.Component {
   render() {
     const props = this.props;
     let title, artist;
+    debugger;
     const isPlaying = props.playerControl.playingState === playingState.PLAYING;
 
     const currentTrack = props.playQueue.items.length && props.playQueue.items[0];

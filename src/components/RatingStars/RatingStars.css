@@ -7,7 +7,7 @@
   display: inline-block;
   width: 8px;
   height: 16px;
-  background-image: url('../images/RatingStars/star-dimmed.svg');
+  background-image: url('./images/star-dimmed.svg');
   background-size: 16px 16px;
   background-repeat: no-repeat;
   background-position: 3px 0;
@@ -27,7 +27,7 @@
 .star.ratedAt ~ .star,
 .star:hover,
 .star:hover ~ .star {
-  background-image: url('../images/RatingStars/star-full.svg');
+  background-image: url('./images/star-full.svg');
 }
 
 /* For hover position on the left hand side of current rating */
@@ -35,21 +35,21 @@
 .star.ratedAt ~ .star:hover ~ .star,
 .star.ratedAt:hover,
 .star.ratedAt:hover ~ .star {
-  background-image: url('../images/RatingStars/star-dark-full.svg');
+  background-image: url('./images/star-dark-full.svg');
 }
 
 /* For hover position on the right hand side of current rating */
 .star:hover ~ .star.ratedAt,
 .star:hover ~ .star.ratedAt ~ .star
 {
-  background-image: url('../images/RatingStars/star-dark-full.svg');
+  background-image: url('./images/star-dark-full.svg');
 }
 
 .readonlyStar {
   display: inline-block;
   width: 5px;
   height: 10px;
-  background-image: url('../images/RatingStars/star-dimmed-readonly.svg');
+  background-image: url('./images/star-dimmed-readonly.svg');
   background-size: 10px 10px;
   background-repeat: no-repeat;
   background-position: 2px 0;
@@ -65,5 +65,5 @@
 }
 
 .readonlyStar.full {
-  background-image: url('../images/RatingStars/star-full-readonly.svg');
+  background-image: url('./images/star-full-readonly.svg');
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../styles/CurrentTrack.css';
+import styles from './CurrentTrack.css';
 
-import RatingStars from '../containers/RatingStars';
+import RatingStars from '../RatingStars';
 
 import moment from 'moment';
 import 'moment-duration-format';

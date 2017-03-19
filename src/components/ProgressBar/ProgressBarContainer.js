@@ -1,5 +1,5 @@
 import React from 'react';
-import ProgressBar from '../components/ProgressBar';
+import ProgressBar from './ProgressBar';
 
 /* Just a plain container wrapper for ProgressBar component */
 var ProgressBarContainer = function (props) {

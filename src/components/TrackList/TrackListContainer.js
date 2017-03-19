@@ -4,11 +4,11 @@ import React, {
 } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import TrackList from '../components/TrackList';
+import TrackList from './TrackList';
 
-import musicLibActions from '../actions/musicLibActions';
-import playQueueActions from '../actions/playQueueActions';
-import playerActions from '../actions/playerActions';
+import musicLibActions from '../../actions/musicLibActions';
+import playQueueActions from '../../actions/playQueueActions';
+import playerActions from '../../actions/playerActions';
 
 class TrackListContainer extends Component {
   render() {

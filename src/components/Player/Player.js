@@ -2,13 +2,13 @@ import 'normalize.css/normalize.css';
 import 'styles/global/general.css';
 
 import React from 'react';
-import constant from '../const/general';
+import constant from '../../const/general';
 
-import PlayerControl from '../containers/PlayerControl';
-import TrackList from '../containers/TrackList';
+import PlayerControl from '../PlayerControl';
+import TrackList from '../TrackList';
 
 
-import styles from '../styles/Player.css';
+import styles from './Player.css';
 
 class Player extends React.Component {
   render() {

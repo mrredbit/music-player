@@ -1,3 +1,5 @@
+/*global expect*/
+
 import actions from '../../src/actions/playerControlActions';
 import actionTypes from '../../src/const/actionTypes';
 import actionSources from '../../src/const/actionSources';
@@ -78,7 +80,7 @@ describe('Action Creators', ()=> {
           source: actionSources.BY_USER,
           data: null
         }
-        expect(actions.prev()).to.eql(expectedAction);
+        expect(actions.prev(playQueue)).to.eql(expectedAction);
       })
     })
 

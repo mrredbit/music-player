@@ -4,8 +4,8 @@ import React, {
 } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import RatingStars from '../components/RatingStars';
-import playQueueActions from '../actions/playQueueActions'
+import RatingStars from './RatingStars';
+import playQueueActions from '../../actions/playQueueActions'
 
 class RatingStarsContainer extends Component {
   render() {

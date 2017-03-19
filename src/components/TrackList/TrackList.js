@@ -1,13 +1,13 @@
 import React from 'react';
-import constant from '../const/general';
+import constant from '../../const/general';
 
-import CurrentTrack from '../containers/CurrentTrack';
-import RatingStar from '../containers/RatingStars';
+import CurrentTrack from '../CurrentTrack';
+import RatingStar from '../RatingStars';
 
-import styles from '../styles/TrackList.css';
-import imgAddButton from '../images/TrackList/add.svg';
-import imgRemoveButton from '../images/TrackList/remove.svg';
-import imgMusic from '../images/TrackList/music.svg';
+import styles from './TrackList.css';
+import imgAddButton from './images/add.svg';
+import imgRemoveButton from './images/remove.svg';
+import imgMusic from './images/music.svg';
 
 import moment from 'moment';
 import 'moment-duration-format';

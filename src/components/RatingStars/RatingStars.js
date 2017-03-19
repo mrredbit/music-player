@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/RatingStars.css';
+import styles from './RatingStars.css';
 
 class RatingStars extends React.Component {
 
