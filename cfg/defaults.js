@@ -27,13 +27,13 @@ function getDefaultModules() {
       /* For global styles */
       {
         test: /\.css$/,
-        include: /styles\/global/,
+        include: /styles/,
         loader: 'classnames!style-loader!css-loader!postcss-loader'
       },
       /* For CSS Modules */
       {
         test: /\.css$/,
-        exclude: /styles\/global/,
+        exclude: /styles/,
         loader: 'classnames!style-loader!css-loader?modules!postcss-loader'
       },
       {
